@@ -13,7 +13,7 @@ SPECIFICATIONS
 9.	The software is a BTC to altcoin exchange market. 
 10.	Users will trade (both buy and sell) crypto currency pairs. 
 11.	All user interaction will be in Turkish and English. 
-12.	All registered users will have a wallet for all cryptocurrencies.
+12.	All registered users will have a wallet for major cryptocurrencies (BTC, LTC, ETH, XRP).
 13.	All registered users will have a wallet for funds (YTL, Turkish Lira)
 14.	The supported alt coins are:
 a.	ETH 
@@ -23,6 +23,9 @@ d.	ETC
 e.	XRP
 15.	The software will have REST API set.
 16.	The trading can be done with API .
+17. Users can fund account with Bank transfer, Cash deposit, debit/credit card.  
+18. A matching engine that looks at the current buy and sell orders and matches orders together and executes the trades. 
+19. Fully zoomable charts that cover complete market history
 
 Scenarios:
 1.	Registration
