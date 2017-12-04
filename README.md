@@ -14,7 +14,7 @@ SPECIFICATIONS
 10.	Users will trade (both buy and sell) crypto currency pairs. 
 11.	All user interaction will be in Turkish and English. 
 12.	All registered users will have a wallet for major cryptocurrencies (BTC, LTC, ETH, XRP).
-13.	All registered users will have a wallet for funds (YTL, Turkish Lira)
+13.	All registered users will have a wallet for funds (Turkish Lira)
 14.	The supported alt coins are:
 a.	ETH 
 b.	LTC
