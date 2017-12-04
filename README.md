@@ -60,7 +60,7 @@ i.	Admin user can define commissions for the following.
 ii.	Admin user can define how many confirmation is needed for a crypto currency (for all crypto currencies) to be valid for a user.
 11.	Admin User Monitor the alt coin
 12.	Admin User Monitor the user requests
-13.	Admin user monitor the exchange network
+13.	Admin user monitor the exchange market
 14.	Admin user investigate user activity
 15.	Admin user investigate user wallet activity
 
