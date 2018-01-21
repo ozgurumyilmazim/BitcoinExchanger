@@ -25,6 +25,8 @@ if($_POST) {
  
     
     $username = $_POST['username'];
+
+    $email = $_POST['email'];
     
     $password = $_POST['password'];
     $c_password = $_POST['c_password'];
@@ -34,7 +36,11 @@ if($_POST) {
     if($username == " ") {
          $em[] = " * Username is Required <br />";
     }
- 
+
+    if($email == " ") {
+         $em[] = " * email is Required <br />";
+    }
+	
     if($password == " ") {
         $em[] = " * Password is Required <br />";
     }
@@ -42,19 +48,16 @@ if($_POST) {
     if($c_password == " ") {
         $em[] =" * Confirm Password is Required <br />";
     }
- 
-    if($username && $password && $c_password) {
- 
+
+	if($username && $password && $c_password) {
+
         if($password == $c_password) {
-            if(userExists($username) === TRUE) {
-                $em[] = " username already exists !!" ;
-            } else {
-                if(registerUser() === TRUE) {
-                     $em[] = "Successfully Registered <a href='index.php'>Login</a>";
-                } else {
-                     $em[] = "Error";
-                }
-            }
+
+        if(emailExists($email) === TRUE) { $em[] = " email already exists !!" ; }
+        if(userExists($username) === TRUE) {$em[] = " username already exists !!" ;}
+      else{ if(registerUser() === TRUE) {$em[] = "Successfully Registered <a href='index.php'>Login</a>";} else {$em[] = "Error";} }
+
+
         } else {
              $em[] = " * Password does not match with Confirm Password <br />";
         }
