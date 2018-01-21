@@ -10,7 +10,21 @@ $connection = new mysqli( server, user,password,database);
 
 
 
+function emailExists($email) {
+    // global keyword is used to access a global variable from within a function
+    global $connection;
 
+    $sql = "SELECT * FROM users WHERE email = '$email'";
+    $query = $connection->query($sql);
+    if($query->num_rows == 1) {
+        return true;
+    } else {
+        return false;
+    }
+
+    $connection->close();
+    // close the database connection
+}
 
 function userExists($username) {
     // global keyword is used to access a global variable from within a function
@@ -120,6 +134,11 @@ function logToDB($message,$connection)
     $username = "UNKNOWN";
   }
 
+  // Get email
+  if( ($email = $_SESSION['email']) == '') {
+    $email = "UNKNOWN";
+  }
+
   // Get IP address
   if( ($remote_addr = $_SERVER['REMOTE_ADDR']) == '') {
     $remote_addr = "REMOTE_ADDR_UNKNOWN";
@@ -131,8 +150,8 @@ if( ($browser = $_SERVER['HTTP_USER_AGENT']) == '') {
   }
 
   // formulate and execute query
-  $query = "INSERT INTO user_log (user_id,username,activity,IP,browser,date)
-   VALUES('$user_id','$username','$message','$remote_addr','$browser',NOW())";
+  $query = "INSERT INTO user_log (user_id,username,email,activity,IP,browser,date)
+   VALUES('$user_id','$username','$email','$message','$remote_addr','$browser',NOW())";
    $q =mysqli_query($connection,$query);
    
 
