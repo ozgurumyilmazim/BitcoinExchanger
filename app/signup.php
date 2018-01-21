@@ -37,10 +37,11 @@ if($_POST) {
          $em[] = " * Username is Required <br />";
     }
 
+
     if($email == " ") {
          $em[] = " * email is Required <br />";
     }
-	
+ 
     if($password == " ") {
         $em[] = " * Password is Required <br />";
     }
@@ -48,15 +49,15 @@ if($_POST) {
     if($c_password == " ") {
         $em[] =" * Confirm Password is Required <br />";
     }
-
-	if($username && $password && $c_password) {
-
+ 
+    if($username && $password && $c_password) {
+ 
         if($password == $c_password) {
 
-        if(emailExists($email) === TRUE) { $em[] = " email already exists !!" ; }
+        if(emailExists($email) === TRUE) { $em[] = " email already exists !!" ; } 
         if(userExists($username) === TRUE) {$em[] = " username already exists !!" ;}
       else{ if(registerUser() === TRUE) {$em[] = "Successfully Registered <a href='index.php'>Login</a>";} else {$em[] = "Error";} }
-
+        
 
         } else {
              $em[] = " * Password does not match with Confirm Password <br />";
@@ -126,6 +127,9 @@ if($_POST) {
     
                      <div class="form-group">
              <input type="text" class="form-control text-center" name="username" value="<?php if($_POST) {echo $_POST['username'];} ?>"  placeholder="username" required>
+                    </div>
+
+                 <input type="text" class="form-control text-center" name="email" value="<?php if($_POST) {echo $_POST['email'];} ?>"  placeholder="email" required>
                     </div>
                    
                     <div class="form-group">
