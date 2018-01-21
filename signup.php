@@ -1,5 +1,4 @@
-
-<?php 
+<?php
 
 
 
@@ -11,28 +10,28 @@ require_once 'includes/db.php';
 
 
 $em=array();
- 
 
- 
+
+
 if(isset($_SESSION['user_id'])) {
-    
+
   header('location:http://www.bitcoinzengini.com/oneadmin/app/exchange.php');
-    
+
 }
- 
+
 // form is submitted
 if($_POST) {
- 
-    
+
+
     $username = $_POST['username'];
 
     $email = $_POST['email'];
-    
+
     $password = $_POST['password'];
     $c_password = $_POST['c_password'];
- 
-    
-    
+
+
+
     if($username == " ") {
          $em[] = " * Username is Required <br />";
     }
@@ -40,16 +39,16 @@ if($_POST) {
     if($email == " ") {
          $em[] = " * email is Required <br />";
     }
-	
+
     if($password == " ") {
         $em[] = " * Password is Required <br />";
     }
- 
+
     if($c_password == " ") {
         $em[] =" * Confirm Password is Required <br />";
     }
 
-	if($username && $password && $c_password) {
+        if($username && $password && $c_password) {
 
         if($password == $c_password) {
 
@@ -62,10 +61,11 @@ if($_POST) {
              $em[] = " * Password does not match with Confirm Password <br />";
         }
     }
- 
+
 }
- 
+
 ?>
+
 
 
 
@@ -77,7 +77,7 @@ if($_POST) {
 
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <!-- Mirrored from byrushan.com/projects/super-admin/app/2.1/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 15 Dec 2017 16:46:03 GMT -->
 <head>
         <meta charset="utf-8">
@@ -97,14 +97,14 @@ if($_POST) {
             <!-- Login -->
             <div class="login__block active" id="l-login">
                 <div class="login__block__header">
-               
+
                     <i class="zmdi zmdi-account-circle"></i>
                      <?php if($em) {
 
                 foreach ($em as $key => $value) {
                   echo '<div class="alert alert-danger" role="alert">
                   <i class="glyphicon glyphicon-exclamation-sign"></i>
-                  '.$value.'</div>';                 
+                  '.$value.'</div>';
                   }
                 } ?>
 
@@ -123,14 +123,10 @@ if($_POST) {
                    <form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
                 <div class="login__block__body">
 
-    
                      <div class="form-group">
              <input type="text" class="form-control text-center" name="username" value="<?php if($_POST) {echo $_POST['username'];} ?>"  placeholder="username" required>
                     </div>
 
-					<input type="text" class="form-control text-center" name="email" value="<?php if($_POST) {echo $_POST['email'];} ?>"  placeholder="email" required>
-                    </div>
-                   
                     <div class="form-group">
                         <input type="password" class="form-control text-center" name="password"  placeholder="Password" required >
                     </div>
@@ -159,7 +155,7 @@ if($_POST) {
                         </div>
                     </div>
                 </div>
-                 
+
                 <div class="login__block__body">
                     <div class="form-group">
                         <input type="text" class="form-control text-center" placeholder="Name">
@@ -215,7 +211,7 @@ if($_POST) {
             </div>
         </div>
 
-        <!-- Older IE warning message -->
+       <!-- Older IE warning message -->
             <!--[if IE]>
                 <div class="ie-warning">
                     <h1>Warning!!</h1>
