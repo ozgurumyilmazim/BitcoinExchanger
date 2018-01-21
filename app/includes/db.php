@@ -10,10 +10,13 @@ $connection = new mysqli( server, user,password,database);
 
 
 
+
+
+
 function emailExists($email) {
     // global keyword is used to access a global variable from within a function
     global $connection;
-
+ 
     $sql = "SELECT * FROM users WHERE email = '$email'";
     $query = $connection->query($sql);
     if($query->num_rows == 1) {
@@ -21,7 +24,7 @@ function emailExists($email) {
     } else {
         return false;
     }
-
+ 
     $connection->close();
     // close the database connection
 }
