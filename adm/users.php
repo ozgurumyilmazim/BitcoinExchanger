@@ -53,6 +53,7 @@
                                         
 
                                         <th>User</th>
+                                        <th>email</th>
                                         <th>activity</th>
                                         <th>date</th>
                                        
@@ -73,6 +74,7 @@
                                       
 
                                         <td><?php echo $row["username"];?></td>
+                                        <td><?php echo $row["email"];?></td>
                                         <td><?php echo $row["activity"];?></td>
                                         <td><?php echo $row["date"];?></td>
                                       
