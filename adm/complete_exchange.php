@@ -177,9 +177,7 @@
                                $amount_depostied_coin=$implode;
                                $pair = $_GET['pair'];//pair
                                $returnAddress = $_GET['return_address'];//input return address
-                            // $apikey = '7decb35ddd235e8c96f4f4e3fcdceb88bc1ee898a81c038109a02d549d
-                            // 8d53581ff2d2caf241789345baa0df4d91ecd661d8eb78b0cd99ce00dcc71
-                            //  dc2c26241';
+                            // $apikey = '6eb365aff1dcdbc2ad83e9dfcf2ed876e57bc9dfd591934b6e83bad662af0b65ad480828b8e048214f91e3a76bdbc0cd56a47f83d9bb13528213388fa39b33b0';
                               $url = 'https://shapeshift.io/sendamount';
                               $data = json_encode(array( 
                                          "amount"=>$x, 
